@@ -1,0 +1,176 @@
+OOP Memory
+
+tuple:  A tuple is another type of data in Python that's a collection of values--
+x, y or x, y, z.
+It's similar in spirit to a list, in that sense, but it's immutable.
+It's not mutable.
+Now, what does that mean?
+A list, as we've seen it before, is a data structure in Python
+that you can change the values of.
+You can go into bracket 0 for the first location and change the value there.
+You can go to bracket 1, bracket 2, bracket 3 and actually change
+the values in lists.
+But if you have no intention of changing the values of variables
+and you want to return, effectively, multiple values,
+you don't have to even return it as a list.
+You can return it as a tuple instead, just by using a comma.
+
+
+_
+
+
+But what a tuple is-- it's very similar in spirit to a list,
+but it is indeed just immutable.
+And what I mean by that is I can still index into it
+numerically by saying student [0] for the item
+in the first location in that tuple.
+And then over here, instead of house, I can say student [1].
+student [1] is going to give me the second location in that tuple.
+
+
+_
+
+
+ I guess, what's an actual use case where
+you would use a tuple versus a list or something else that's similar?
+DAVID J. MALAN: It's a really good question.
+When would you use a tuple versus a list?
+When you want to program defensively, or, in general,
+when you know that the values in this variable shouldn't change,
+so why would you use a data type that allows them to be changed?
+It just invites mistakes, bugs down the line, either
+by you or colleagues who are interacting with your code.
+So tuple is just another way where you can increase
+the probability of correctness by just not letting anyone, yourself included,
+change the contents therein.
+
+_
+
+
+classes:  A class is like a blueprint for pieces of data objects.
+A class is a mold that you can define and give a name.
+And when you use that mold or you use that blueprint,
+you get types of data that are designed exactly as you want.
+So in short, classes allow you to invent your own data types in Python
+and give them a name.
+And this is a primary feature of object oriented programming,
+to be able to create your own objects in this way
+and, in the case of Python in classes, even give them some custom names.
+
+docs.python.org/3/tutorial/classes.html
+
+keyword: class
+
+_
+
+
+attributes: instance variables
+- calling those same attributes, more technically, instance variables.
+"Name" and "House," as I presented them here in VS Code
+are really just variables called "name" and called "house" inside
+of an object whose type is student.
+
+V.1.1
+_ And now we're setting the stage for the more powerful features of classes
+and object-oriented programming more generally.
+Notice that I'm deliberately passing to this capital S Student
+function, name, house--
+I'm passing in arguments to the function.
+Now, the student class is not going to know what to do with those yet,
+but now I'm standardizing how I'm passing data into this student class.
+And ultimately, it's going to give me an opportunity to error
+check those inputs, to make sure that the name is valid, that it has a value
+and it's not just the user hitting Enter.
+It's going to allow me to ensure that it's a valid house
+
+👹👺☠️💀
+methods: And a method is just a function inside of a class.
+So let's now go up to the student class, which, up until now,
+I left as just dot, dot, dot.
+It turns out that, in the context of classes,
+there are a number of not just attributes or instance
+variables that you can put inside, but also methods.
+Classes come with certain methods, or functions inside of them,
+that you can define, and they just behave in a special way,
+by nature of how Python works.
+These functions allow you to determine behavior in a standard way.
+They are special methods in that sense.
+Now, what do I mean by this.
+Well, let me go back to VS Code here.
+And let me propose that I start to define a standard function
+called underscore underscore, or Dunder, as it's
+abbreviated, init, underscore underscore,
+and then I'm going to go ahead and do open parentheses,
+and then I'm going to put in here, literally, the word self.
+More on that in just a moment.
+But now, inside of this function, I'm going to have an opportunity
+to customize this class's objects.
+
+
+@property:  namely properties.
+So a property is really just an attribute
+that has even more defense mechanisms put into place,
+a little more functionality implemented by you to prevent programmers, like me
+and you, from messing things up like these attributes.
+So again, a property is going to be an attribute that you and I just
+have more control over.
+
+decorators:  which are functions that modify the behavior of other functions,
+
+
+
+V.1.6
+***   _ variable starts with an underscore, please don't touch it.
+Just don't.
+That's on you if you touch that variable and break things.
+The underscore is meant to signify a convention
+that this is meant to be "private," but it really just
+means, please don't touch this.
+Sometimes, if there's two underscores, which you can use,
+too, that's an even greater effort by programmers to say,
+really don't touch this.  _ ***
+
+int => is a class that is class int(x, base=10)
+
+str => is a class that is clas str(object=' ')
+
+str.lower() => the lower is a method
+
+str.strip([chars]) => the strip is a method
+
+list => is a class that is clas list([iterable])
+
+list.append(x) => is a class
+
+dict => is a class
+
+@classmethod:  t turns out that sometimes it's not really necessary or sensible
+to associate a function with objects of a class,
+but rather with the class itself.
+An instance, or an object of a class, is a very specific incarnation thereof.
+Again, on that neighborhood that has a lot of identical looking buildings,
+but they're all a little bit different because of different paint and such,
+sometimes you might have functionality related
+to each of those houses that isn't distinct or unique for any
+of the houses.
+It's functionality that's going to be exactly the same no
+matter the house in question.
+Same in the world of object-oriented programming.
+Sometimes you want some functionality, some action
+to be associated with the class itself, no matter what the specific object's
+own values or instance variables are.
+And for that, we have a keyword called @classmethod.
+
+
+@staticmethod:
+inheritance -> It turns out, via object-oriented programming,
+there's actually an opportunity to design your classes
+in a hierarchical fashion, whereby you can have one class inherit from
+or borrow attributes-- that is, methods or variables from another class
+if they all have those in common.
+
+operator overloating: docs.python.org/3/reference/datamodel.html#special-method-names
+object.__add__(self, other)
+
+
+https://cs50.harvard.edu/python/2022/notes/8/
